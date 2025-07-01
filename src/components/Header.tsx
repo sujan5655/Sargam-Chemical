@@ -12,31 +12,36 @@ export default function Header() {
   }, [menuOpen]);
 
   return (
-    <header className="relative flex justify-between items-center max-w-full mx-auto px-4 lg:px-8 py-4 shadow-md bg-white border-b-2 border-blue-700 z-50 md:h-[100px]">
-      {/* Left: Logo + Company Name */}
+    <header className="fixed top-0 left-0 w-full font-sans flex justify-between items-center px-4 lg:px-8 py-4 shadow-md bg-white  z-50 md:h-[100px] ">
+      {/* Logo Section */}
       <div className="flex items-center space-x-3">
         <Image src={logo} alt="Sargam Chemicals Logo" width={80} height={80} />
         <span className="text-xl font-bold">Sargam Chemical</span>
       </div>
 
-      <nav className="hidden md:flex space-x-10 items-center">
-        <Link href="/" className="hover:text-blue-700">
-          Home
-        </Link>
-        <Link href="/products" className="hover:text-blue-700">
-          Products
-        </Link>
-        <Link href="/about" className="hover:text-blue-700">
-          About Us
-        </Link>
-        <Link href="/contact" className="hover:text-blue-700">
-          Contact
-        </Link>
-        <Link href="/frequently-asked-question" className="hover:text-blue-700">
-          FAQ
-        </Link>
+      {/* Desktop Nav */}
+      <nav className="hidden md:flex space-x-10 items-center font-bold">
+        {[
+          { href: "/", label: "Home" },
+          { href: "/products", label: "Products" },
+          { href: "/about", label: "About Us" },
+          { href: "/contact", label: "Contact" },
+          { href: "/frequently-asked-question", label: "FAQ" },
+        ].map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="relative text-gray-800 hover:text-blue-700 transition-all duration-300 ease-in-out group"
+          >
+            <span className="group-hover:tracking-wide transition-all duration-300">
+              {item.label}
+            </span>
+            <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-700 transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+        ))}
       </nav>
 
+      {/* Mobile Menu Toggle */}
       <button
         className="md:hidden text-2xl focus:outline-none"
         onClick={() => setMenuOpen(!menuOpen)}
@@ -44,24 +49,27 @@ export default function Header() {
         {menuOpen ? "✖" : "☰"}
       </button>
 
-      {/* Dropdown Menu for small screens */}
+      {/* Mobile Dropdown Menu */}
       {menuOpen && (
-        <div className="absolute top-full left-0 w-full bg-white shadow-md flex flex-col items-start p-4 space-y-2 md:hidden z-50 transition-all">
-          <Link href="/" className="w-full hover:text-blue-700">
-            Home
-          </Link>
-          <Link href="/products" className="w-full hover:text-blue-700">
-            Products
-          </Link>
-          <Link href="/about" className="w-full hover:text-blue-700">
-            About Us
-          </Link>
-          <Link href="/contact" className="w-full hover:text-blue-700">
-            Contact
-          </Link>
-          <Link href="/faq" className="w-full hover:text-blue-700">
-            FAQ
-          </Link>
+        <div className="absolute top-full left-0 w-full bg-white shadow-md flex flex-col items-start p-4 space-y-2 md:hidden z-50 transition-all font-bold font-sans">
+          {[
+            { href: "/", label: "Home" },
+            { href: "/products", label: "Products" },
+            { href: "/about", label: "About Us" },
+            { href: "/contact", label: "Contact" },
+            { href: "/frequently-asked-question", label: "FAQ" },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="relative w-full text-gray-800 hover:text-blue-700 transition-all duration-300 ease-in-out group"
+            >
+              <span className="group-hover:tracking-wide transition-all duration-300">
+                {item.label}
+              </span>
+              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-700 transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+          ))}
         </div>
       )}
     </header>

@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata = {
   title: "Sargam Chemical",
   icons: {
-    icon: "/images/favicon.ico",
+    icon: "/favicon.ico",
   },
   description: "High-quality chemical solutions",
 };

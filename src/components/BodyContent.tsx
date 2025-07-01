@@ -1,110 +1,170 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
 
 export default function BodyContent() {
   const products = [
     {
+      name: "Laundry Soap",
+      slug: "laundry-soap",
+      image: "/images/laundrysoap2.jpg",
+      description:
+        "High-performance cleaning solutions for factories, plants, and heavy industries.",
+    },
+   
+    {
       name: "Industrial Cleaning Agents",
-      image: "/images/washingmachine.jpg",
+      slug: "industrial-cleaning-agents",
+      image: "/images/detergent1.jpg",
       description:
         "High-performance cleaning solutions for factories, plants, and heavy industries.",
     },
     {
-      name: "Water Treatment Chemicals",
-      image: "/images/logo.jpg",
+      name: "Homecare",
+      slug: "homecare",
+      image: "/images/homecare.jpg",
+      description:
+        "High-performance cleaning solutions for factories, plants, and heavy industries.",
+    },
+    {
+      name: "Cloth Soap",
+      slug: "cloth-soap",
+      image: "/images/laundrysoap1.jpg",
       description:
         "Advanced chemicals to ensure safe, efficient, and eco-friendly water treatment.",
     },
     {
-      name: "Textile Processing Chemicals",
-      image: "/images/logo.jpg",
+      name: "Dishwash",
+      slug: "dishwash",
+      image: "/images/dishwash.jpg",
+      description:
+        "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
+    },
+  ];
+
+  const otherproducts = [
+    {
+      name: "Machine1",
+      slug: "machine1",
+      image: "/images/otherproduct/machine1.jpg",
+      description:
+        "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
+    },
+    {
+      name: "Machine2",
+      slug: "machine2",
+      image: "/images/otherproduct/machine2.jpg",
+      description:
+        "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
+    },
+    {
+      name: "Machine3",
+      slug: "machine3",
+      image: "/images/otherproduct/machine3.jpg",
       description:
         "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
     },
   ];
 
   return (
-    <section className="p-8 max-w-7xl mx-auto">
-      <div className="sm:flex sm:h-auto sm:w-full mb-[50px]">
-        <div className="text-blue-800 w-full sm:w-1/2 sm:pr-8">
-          <h2 className="text-4xl font-bold text-blue-900 mb-4">
+    <section className="w-full">
+      {/* Hero Section (Full WiEFdth) */}
+      <div className="bg-[#578FCA] text-white p-10 flex flex-col-reverse md:flex-row items-center justify-between gap-10 mb-0">
+        <div className="flex-1 max-w-xl">
+          <div className="lg:ml-[50px]">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Driving Innovation in the Chemical Industry
-          </h2>
-          <p className="text-gray-700 mb-4 md:text-3xl">
-            At Sargam Chemicals, we develop reliable and sustainable chemical
-            solutions to empower industries — from cleaning and sanitation to
-            water treatment and textile processing.
+          </h1>
+          <p className="text-lg mb-6 text-justify">
+            Sargam Chemical Industries Pvt Ltd was founded in 2025 and is headquartered in Duhabi Sunsari, Nepal eastern region. 
+            It is a top soap and detergent manufacturer in Nepal. Our products are offered in more than 77 districts in Nepal. 
+            The company has been producing environmentally friendly and high-quality items, which has helped us earn the trust 
+            and loyalty of customers.
           </p>
-          <div className="flex gap-4 mt-6">
-            <button className="bg-blue-800 text-white px-6 py-2 rounded-full shadow-md hover:bg-blue-900 transition">
-              Get Started
+         
+        
+          <Link href="/products">
+            <button className="px-6 py-3 bg-white text-blue-800 font-semibold rounded-full shadow-md hover:bg-gray-100 transition">
+              Shop All Products
             </button>
-            <button className="border border-blue-800 text-blue-800 px-6 py-2 rounded-full hover:bg-blue-50 transition">
-              Learn More
-            </button>
-          </div>
+          </Link>
+           </div>
         </div>
-
-       <div className="w-full sm:w-[350px] md:w-[300px] lg:w-[400px] mx-auto">
-  <Image
-    src="/images/products.png"
-    alt="products image"
-    width={400}
-    height={250}
-    className="rounded-2xl w-full h-auto object-contain"
-  />
-</div>
-
+        <div className="flex-1 text-center">
+          <Image
+            src="/images/product.png"
+            alt="Smart Device Image"
+            width={400}
+            height={400}
+            className="object-contain mx-auto"
+          />
+        </div>
       </div>
 
-      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-[25px]">
-        {products.map((product, index) => (
-  <div
-    key={index}
-    className="relative max-w-sm bg-gradient-to-br from-blue-50 via-white to-blue-100 border border-blue-200 rounded-xl overflow-hidden shadow-md hover:shadow-2xl transform transition duration-300 hover:-translate-y-2 hover:scale-[1.03]"
-  >
-    <div className="overflow-hidden">
-      <Image
-        className="object-cover rounded-t-xl hover:scale-110 transition duration-500"
-        src={product.image}
-        alt={product.name}
-        width={500}
-        height={300}
-        layout="responsive"
-      />
-    </div>
-    <div className="p-5">
-      <h5 className="mb-2 text-xl font-bold text-blue-900 tracking-wide uppercase">
-        {product.name}
-      </h5>
-      <p className="mb-4 text-sm text-gray-700 leading-relaxed">
-        {product.description}
-      </p>
-      <a
-        href="#"
-        className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-700 rounded-full shadow hover:bg-blue-800 transition-all duration-300"
-      >
-        Read More
-        <svg
-          className="w-4 h-4 ml-2"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M17 8l4 4m0 0l-4 4m4-4H3"
-          />
-        </svg>
-      </a>
-    </div>
+      {/* Content with Padding */}
+      <div className="px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+        {/* Products Section */}
+        <h2 className="text-3xl font-bold text-blue-900 mt-16 mb-6">Products</h2>
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+          {products.map((product, index) => (
+            <Link
+              href={`/products/${product.slug}`}
+              key={index}
+              className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg border border-transparent hover:border-blue-600 transition-all"
+            >
+              <Image
+                className="object-cover w-full h-48 rounded-t-xl transition-transform duration-500 group-hover:scale-110"
+                src={product.image}
+                alt={product.name}
+                width={500}
+                height={300}
+              />
+              <div className="p-5">
+                <h5 className="mb-2 text-xl font-bold text-blue-900 uppercase">
+                  {product.name}
+                </h5>
+                <p className="text-sm text-gray-700">{product.description}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
 
-    {/* Decorative glow border */}
-    <div className="absolute top-0 left-0 w-full h-full rounded-xl border-2 border-transparent hover:border-blue-400 transition-all duration-300 pointer-events-none" />
-  </div>
-))}
+        <div className="mt-10 text-right">
+          <Link
+            href="/products"
+            className=" inline-block px-6 py-3 text-white bg-orange-600 font-semibold rounded-full shadow-md hover:bg-orange-700 hover:scale-105 transition"
+          >
+            View More →
+          </Link>
+        </div>
 
+        {/* Machinery Section */}
+        <h2 className="text-3xl font-bold text-blue-900 mt-16 mb-6">Machinery</h2>
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          {otherproducts.map((otherproduct, index) => (
+            <div
+              key={index}
+              className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg border border-transparent hover:border-blue-600 transition-all"
+            >
+              <Link href={`/machinery/${otherproduct.slug}`}>
+                <Image
+                  className="object-contain rounded-t-xl h-48 w-full transition-transform duration-500 group-hover:scale-110"
+                  src={otherproduct.image}
+                  alt={otherproduct.name}
+                  width={300}
+                  height={200}
+                />
+              </Link>
+              <div className="p-5">
+                <h5 className="mb-2 text-xl font-bold text-blue-900 uppercase">
+                  {otherproduct.name}
+                </h5>
+                <p className="text-sm text-gray-700">{otherproduct.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

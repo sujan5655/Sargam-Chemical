@@ -1,76 +1,90 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
+const faqData = [
+  {
+    category: "Partnership & Dealership",
+    questions: [
+      { q: "How can I become a dealer for Sargam Chemical?", a: "You can become a dealer by contacting our sales team and fulfilling our partnership requirements." },
+      { q: "What support do you provide to dealers?", a: "We provide marketing support, training, and exclusive dealer benefits." },
+      { q: "What are the requirements to become a dealer?", a: "Requirements include business registration, financial stability, and market reach." },
+      { q: "Do you provide training for dealer staff?", a: "Yes, we offer regular training sessions to dealer teams." }
+    ],
+  },
+];
 
-export default function FrequentlyAskedQuestion() {
-  const faqs = [
-    {
-      question: "What is Sargam Chemical?",
-      answer:
-        "Sargam Chemical is a chemical manufacturing company based in Biratnagar, Nepal, producing industrial and household chemical products.",
-    },
-    {
-      question: "What products does Sargam Chemical produce?",
-      answer:
-        "We produce detergents, disinfectants, sanitizers, toilet cleaners, floor cleaners, and various industrial-grade chemicals.",
-    },
-    {
-      question: "Where is Sargam Chemical located?",
-      answer: "We are located in Biratnagar-5, Morang, Nepal.",
-    },
-    {
-      question: "Do you provide custom chemical solutions?",
-      answer:
-        "Yes, we provide customized formulations and chemical solutions tailored to specific industry requirements.",
-    },
-    {
-      question: "Is delivery available across Nepal?",
-      answer:
-        "Yes, we offer delivery services across Nepal depending on the order size and location.",
-    },
-    {
-      question: "Are your products eco-friendly?",
-      answer:
-        "We are committed to sustainability and use environmentally friendly practices and materials where possible.",
-    },
-  ];
+export default function FAQSection() {
+  const [openIndex, setOpenIndex] = useState<string | null>(null);
 
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const toggle = (idx: string) => {
+    setOpenIndex(openIndex === idx ? null : idx);
   };
 
   return (
-    <section className="max-w-4xl mx-auto p-8">
-      <h1 className="text-3xl font-bold text-center text-blue-900 mb-10">
-        Frequently Asked Questions
-      </h1>
-      <div className="space-y-4">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="border border-gray-200 rounded-lg overflow-hidden"
-          >
-            <button
-              className="w-full text-left px-6 py-4 bg-blue-50 hover:bg-blue-100 transition flex justify-between items-center"
-              onClick={() => toggleFAQ(index)}
-            >
-              <span className="font-medium text-blue-900">{faq.question}</span>
-              <span
-                className={`text-xl text-blue-700 transform transition-transform duration-300 ${
-                  openIndex === index ? "rotate-180" : ""
-                }`}
-              >
-                ▼
-              </span>
-            </button>
-            {openIndex === index && (
-              <div className="px-6 py-4 bg-white text-gray-700">
-                {faq.answer}
-              </div>
-            )}
+    <section className="w-full px-4 py-16 bg-[#f8f9fb] mt-8">
+      <div className="max-w-4xl mx-auto">
+        {/* FAQ */}
+        {faqData.map((section, sectionIdx) => (
+          <div key={sectionIdx}>
+            <h2 className="text-2xl font-bold mb-6">{section.category}</h2>
+            <div className="space-y-4">
+              {section.questions.map((item, idx) => {
+                const index = `${sectionIdx}-${idx}`;
+                const isOpen = openIndex === index;
+                return (
+                  <div key={index} className="border rounded-lg">
+                    <button
+                      className="flex justify-between items-center w-full p-4 text-left text-gray-800 font-medium"
+                      onClick={() => toggle(index)}
+                    >
+                      {item.q}
+                      <span
+                        className={`transform transition-transform text-xl ${
+                          isOpen ? "rotate-180" : "rotate-0"
+                        }`}
+                      >
+                        ▼
+                      </span>
+                    </button>
+                    {isOpen && (
+                      <div className="p-4 pt-0 text-sm text-gray-700">
+                        {item.a}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         ))}
+      </div>
+
+      {/* Still Have Questions */}
+      <div className="max-w-6xl mx-auto mt-20 text-center">
+        <h3 className="text-2xl font-bold mb-4">Still Have Questions?</h3>
+        <p className="text-gray-600 mb-10">
+          Our expert team is ready to help you with any questions or concerns you may have.
+          Choose the most convenient way to reach us.
+        </p>
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className="bg-white rounded-xl shadow p-6">
+            <p className="font-semibold mb-2">Live Chat</p>
+            <p className="text-sm text-gray-600">Get instant answers from our support team</p>
+          </div>
+          <div className="bg-white rounded-xl shadow p-6">
+            <p className="font-semibold mb-2">Call Us</p>
+            <p className="text-sm text-gray-600">942185602</p>
+          </div>
+          <div className="bg-white rounded-xl shadow p-6">
+            <p className="font-semibold mb-2">Email Us</p>
+            <p className="text-sm text-gray-600">sargamchemical@gmail.com</p>
+          </div>
+        </div>
+        <div className="flex justify-center gap-4">
+          <Link href="/contact"><button className="px-6 py-2 rounded-full bg-blue-800 text-white font-medium">Contact Support</button></Link>
+          
+         
+        </div>
       </div>
     </section>
   );
