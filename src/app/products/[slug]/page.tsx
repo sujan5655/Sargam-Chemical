@@ -1,7 +1,15 @@
 import Image from "next/image";
+import Link from "next/link";
 
-// Sample product data (same as in BodyContent)
+// Sample product data
 const products = [
+  {
+    name: "Detergent",
+    slug: "detergent",
+    image: "/images/detergent3.jpg",
+    description:
+      "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
+  },
   {
     name: "Laundry Soap",
     slug: "laundry-soap",
@@ -44,6 +52,13 @@ const products = [
     description:
       "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
   },
+  {
+    name: "Detergent",
+    slug: "dishwash",
+    image: "/images/detergent5.jpg",
+    description:
+      "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
+  },
 ];
 
 export default function ProductPage({ params }: { params: { slug: string } }) {
@@ -58,30 +73,39 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   }
 
   return (
-   <div className="mt-[50px] container mx-auto px-4 py-12 max-w-5xl">
-    <h1 className="text-4xl font-bold text-blue-900 mb-10 text-center">
-      {product.name}
-    </h1>
+    <div className="mt-[60px] px-4 sm:px-6 md:px-8 lg:px-12 py-8 max-w-6xl mx-auto">
+      {/* Back Button */}
+      <Link
+        href="/"
+        className="text-blue-700 hover:text-blue-900 flex items-center gap-2 mb-8 transition duration-200"
+      >
+        <span className="text-2xl">←</span>
+        <span className="text-lg font-medium">Back to Home</span>
+      </Link>
 
-    <div className="flex flex-col md:flex-row items-center gap-8">
-      {/* Image */}
-      <div className="flex-1 flex justify-center">
-        <Image
-          src={product.image}
-          alt={product.name}
-          width={400}
-          height={300}
-          className="rounded-xl object-contain w-full max-w-xs sm:max-w-sm md:max-w-md"
-        />
-      </div>
+      {/* Product Name */}
+      <h1 className="text-3xl sm:text-4xl font-bold text-blue-900 text-center mb-8">
+        {product.name}
+      </h1>
 
-      {/* Description */}
-      <div className="flex-1">
-        <p className="text-lg text-gray-700 leading-relaxed text-justify">
-          {product.description}
-        </p>
+      {/* Image and Description Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        {/* Product Image */}
+        <div className="flex justify-center">
+          <Image
+            src={product.image}
+            alt={product.name}
+            width={450}
+            height={350}
+            className="rounded-2xl object-cover shadow-md max-w-full"
+          />
+        </div>
+
+        {/* Product Description */}
+        <div className="text-gray-800 text-justify text-base sm:text-lg leading-relaxed">
+          <p>{product.description}</p>
+        </div>
       </div>
     </div>
-  </div>
   );
 }

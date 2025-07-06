@@ -12,7 +12,9 @@ export default function DealerForm() {
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -22,15 +24,15 @@ export default function DealerForm() {
 
     emailjs
       .send(
-        "service_ci00dzk",
-        "template_jh9t4x6",
+        "service_xnd7tia",
+        "template_sc5dg6f",
         {
           from_name: formData.name,
           from_email: formData.email,
           phone: formData.phone,
           message: formData.message,
         },
-        "J6A1zUjbmaGL5OLeV"
+        "cvseTwJA_PVrZvhrT"
       )
       .then(
         () => {
@@ -45,16 +47,17 @@ export default function DealerForm() {
   };
 
   return (
-    <section className="mt-20 px-4 py-16 bg-gradient-to-br from-blue-50 via-white to-blue-100 rounded-xl shadow-xl">
+    <section className="mt-20 px-4 py-16 bg-emerald-200 rounded-xl shadow-inner">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
           <h2 className="text-4xl xl:text-5xl font-extrabold text-blue-900 mb-4">
             Become Our Partner
           </h2>
           <p className="text-lg xl:text-xl text-gray-700 max-w-4xl mx-auto">
-            Join hands with <strong>Sargam Chemicals</strong> and grow your business with us.
-            As our partner, you get exclusive access to our industrial chemical solutions,
-            competitive pricing, and dedicated support from our team.
+            Join hands with <strong>Sargam Chemicals</strong> and grow your
+            business with us. As our partner, you get exclusive access to our
+            industrial chemical solutions, competitive pricing, and dedicated
+            support from our team.
           </p>
         </div>
 
@@ -83,20 +86,23 @@ export default function DealerForm() {
                   {item.icon}
                 </span>
                 <div>
-                  <h4 className="text-lg xl:text-xl font-semibold text-blue-800">{item.title}</h4>
-                  <p className="text-gray-600 text-sm xl:text-base">{item.desc}</p>
+                  <h4 className="text-lg xl:text-xl font-semibold text-blue-800">
+                    {item.title}
+                  </h4>
+                  <p className="text-gray-600 text-sm xl:text-base">
+                    {item.desc}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Form Section */}
-          <div className="w-full lg:max-w-md bg-white rounded-3xl shadow-xl p-8 xl:p-10 mt-10 lg:mt-0">
+          <div className="w-full lg:max-w-xl bg-white rounded-3xl shadow-2xl p-8 xl:p-10 mt-10 lg:mt-0">
             <h3 className="text-2xl font-bold text-blue-900 mb-6 text-center">
               Interested in Partnering?
             </h3>
 
-            {/* Success & Error Messages at the Top */}
             {status === "success" && (
               <div className="bg-green-100 text-green-800 p-3 rounded text-center font-medium mb-4">
                 ✅ Thank you! We will contact you soon.
@@ -109,58 +115,68 @@ export default function DealerForm() {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-5">
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Name</label>
-                <input
-                  required
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  type="text"
-                  placeholder="Your Full Name"
-                  className="w-full px-4 py-3 mt-1 border rounded-md shadow-sm focus:ring-2 focus:ring-orange-400 focus:outline-none"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Email</label>
-                <input
-                  required
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  type="email"
-                  placeholder="you@example.com"
-                  className="w-full px-4 py-3 mt-1 border rounded-md shadow-sm focus:ring-2 focus:ring-orange-400 focus:outline-none"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Phone Number</label>
-                <input
-                  required
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  type="text"
-                  placeholder="+977-XX-XXXXXXX"
-                  className="w-full px-4 py-3 mt-1 border rounded-md shadow-sm focus:ring-2 focus:ring-orange-400 focus:outline-none"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Message</label>
-                <textarea
-                  required
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  placeholder="Tell us a bit about your business..."
-                  className="w-full px-4 py-3 mt-1 border rounded-md shadow-sm resize-none focus:ring-2 focus:ring-orange-400 focus:outline-none"
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Name
+                  </label>
+                  <input
+                    required
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    type="text"
+                    placeholder="Your Full Name"
+                    className="w-full px-4 py-3 mt-1 border rounded-lg shadow-sm focus:ring-2 focus:ring-orange-400 focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Email
+                  </label>
+                  <input
+                    required
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    type="email"
+                    placeholder="you@example.com"
+                    className="w-full px-4 py-3 mt-1 border rounded-lg shadow-sm focus:ring-2 focus:ring-orange-400 focus:outline-none"
+                  />
+                </div>
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-medium text-gray-700">
+                    Phone Number
+                  </label>
+                  <input
+                    required
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    type="text"
+                    placeholder="+977-XX-XXXXXXX"
+                    className="w-full px-4 py-3 mt-1 border rounded-lg shadow-sm focus:ring-2 focus:ring-orange-400 focus:outline-none"
+                  />
+                </div>
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-medium text-gray-700">
+                    Message
+                  </label>
+                  <textarea
+                    required
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={4}
+                    placeholder="Tell us a bit about your business..."
+                    className="w-full px-4 py-3 mt-1 border rounded-lg shadow-sm resize-none focus:ring-2 focus:ring-orange-400 focus:outline-none"
+                  />
+                </div>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-orange-500 text-white font-semibold py-3 rounded-md hover:bg-orange-600 transition-all duration-300"
+                className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-3 rounded-md shadow-md hover:from-orange-600 hover:to-orange-700 transition-all duration-300"
               >
                 Submit
               </button>

@@ -4,6 +4,18 @@ import Image from "next/image";
 
 export default function Products() {
   const allProducts = [
+     {
+      name: "Detergent Powder",
+      category: "Detergent Powder",
+      image: "/images/detergent3.jpg",
+      description: "Removes tough grease and stains, leaves utensils shining.",
+    },
+    {
+      name: "Laundry Product",
+      category: "Laundry Soap",
+      image: "/images/laundrysoap5.jpg",
+      description: "Brightens and refreshes clothes effectively.",
+    },
     {
       name: "Utensil Soap",
       category: "Utensil Soap",
@@ -41,6 +53,12 @@ export default function Products() {
       image: "/images/laundrysoap2.jpg",
       description: "Powerful cleaning with fresh fragrance.",
     },
+     {
+      name: "Laundry Product",
+      category: "Laundry Soap",
+      image: "/images/laundrysoap6.jpg",
+      description: "Brightens and refreshes clothes effectively.",
+    },
     {
       name: "Laundry Product",
       category: "Laundry Soap",
@@ -54,10 +72,22 @@ export default function Products() {
       description: "Brightens and refreshes clothes effectively.",
     },
     {
+      name: "Detergent Powder",
+      category: "Detergent Powder",
+      image: "/images/detergent4.jpg",
+      description: "Removes tough grease and stains, leaves utensils shining.",
+    },
+    {
       name: "Toilet Soap",
       category: "Toilet Soap",
       image: "/images/detergent1.jpg",
       description: "Gentle on skin with long-lasting fragrance.",
+    },
+     {
+      name: "Laundry Product",
+      category: "Laundry Soap",
+      image: "/images/laundrysoap7.jpg",
+      description: "Brightens and refreshes clothes effectively.",
     },
     {
       name: "Cloth Soap",
@@ -71,6 +101,13 @@ export default function Products() {
       image: "/images/otherproduct/machine1.jpg",
       description: "Effective cleaner for multiple household uses.",
     },
+    {
+      name: "Detergent Powder",
+      category: "Detergent Powder",
+      image: "/images/detergent5.jpg",
+      description: "Removes tough grease and stains, leaves utensils shining.",
+    },
+
         {
       name: "Multipurpose Cleaner",
       category: "Machinery",
@@ -92,6 +129,7 @@ export default function Products() {
   const categories = [
     "All",
     "Utensil Soap",
+    "Detergent Powder",
     "Home Care",
     "Laundry Soap",
     "Toilet Soap",

@@ -6,6 +6,13 @@ import Link from "next/link";
 export default function BodyContent() {
   const products = [
     {
+      name: "Detergent",
+      slug: "detergent",
+      image: "/images/detergent3.jpg",
+      description:
+        "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
+    },
+    {
       name: "Laundry Soap",
       slug: "laundry-soap",
       image: "/images/laundrysoap2.jpg",
@@ -38,6 +45,13 @@ export default function BodyContent() {
       name: "Dishwash",
       slug: "dishwash",
       image: "/images/dishwash.jpg",
+      description:
+        "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
+    },
+     {
+      name: "Dishwash",
+      slug: "dishwash",
+      image: "/images/detergent5.jpg",
       description:
         "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
     },
@@ -103,10 +117,10 @@ export default function BodyContent() {
       </div>
 
       {/* Content with Padding */}
-      <div className="px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+      <div className="px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 ">
         {/* Products Section */}
         <h2 className="text-3xl font-bold text-blue-900 mt-16 mb-6">Products</h2>
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 ">
           {products.map((product, index) => (
             <Link
               href={`/products/${product.slug}`}
