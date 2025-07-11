@@ -1,0 +1,14 @@
+name = "sargam-chemical"
+main = "./.open-next/worker.js"
+compatibility_date = "2024-07-06"
+compatibility_flags = ["nodejs_compat"]
+
+[[r2_buckets]]
+binding = "NEXT_INC_CACHE_R2_BUCKET"
+bucket_name = "sargam-chemical-cache"
+
+[site]
+bucket = ".open-next/assets"
+
+[build]
+command = "opennextjs-cloudflare build"

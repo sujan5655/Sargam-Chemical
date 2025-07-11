@@ -22,8 +22,14 @@ const otherproducts = [
   },
 ];
 
-export default function MachineryPage({ params }) {
-  const { slug } = params;
+interface PageProps {
+  params: Promise<{
+    slug: string;
+  }>;
+}
+
+export default async function MachineryPage({ params }: PageProps) {
+  const { slug } = await params;
   const selectedProduct = otherproducts.find((product) => product.slug === slug);
 
   if (!selectedProduct) {

@@ -32,7 +32,7 @@ export default function About() {
             <Sparkles className="text-yellow-500" /> Why Our Products Shine
           </h3>
           <p className="text-gray-700 text-lg leading-relaxed">
-            Sargam products remove stubborn stains with a single wash. Whether it's greasy kitchenware or tough laundry marks, our formulas are machine-friendly, gentle on colors, and derived from vegan ingredients.
+            Sargam products remove stubborn stains with a single wash. Whether It&apos;s greasy kitchenware or tough laundry marks, our formulas are machine-friendly, gentle on colors, and derived from vegan ingredients.
           </p>
         </div>
       </div>

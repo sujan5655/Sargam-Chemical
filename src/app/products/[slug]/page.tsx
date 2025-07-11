@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 
-// Sample product data
 const products = [
   {
     name: "Detergent",
@@ -61,8 +61,27 @@ const products = [
   },
 ];
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
-  const product = products.find((p) => p.slug === params.slug);
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const product = products.find((p) => p.slug === slug);
+
+  return {
+    title: product ? product.name : "Product Not Found",
+    description: product
+      ? product.description
+      : "No product found for this slug.",
+  };
+}
+
+export default async function ProductPage({ params }: PageProps) {
+  const { slug } = await params;
+  const product = products.find((p) => p.slug === slug);
 
   if (!product) {
     return (
