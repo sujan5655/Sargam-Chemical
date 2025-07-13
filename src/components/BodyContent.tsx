@@ -19,7 +19,7 @@ export default function BodyContent() {
       description:
         "High-performance cleaning solutions for factories, plants, and heavy industries.",
     },
-   
+
     {
       name: "Industrial Cleaning Agents",
       slug: "industrial-cleaning-agents",
@@ -48,9 +48,9 @@ export default function BodyContent() {
       description:
         "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
     },
-     {
-      name: "Dishwash",
-      slug: "dishwash",
+    {
+      name: "detergent",
+      slug: "detergent",
       image: "/images/detergent5.jpg",
       description:
         "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
@@ -84,42 +84,49 @@ export default function BodyContent() {
   return (
     <section className="w-full">
       {/* Hero Section (Full WiEFdth) */}
-      <div className="bg-[#578FCA] text-white p-10 flex flex-col-reverse md:flex-row items-center justify-between gap-10 mb-0">
-        <div className="flex-1 max-w-xl">
-          <div className="lg:ml-[50px]">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Driving Innovation in the Chemical Industry
-          </h1>
-          <p className="text-lg mb-6 text-justify">
-            Sargam Chemical Industries Pvt Ltd was founded in 2025 and is headquartered in Duhabi Sunsari, Nepal eastern region. 
-            It is a top soap and detergent manufacturer in Nepal. Our products are offered in more than 77 districts in Nepal. 
-            The company has been producing environmentally friendly and high-quality items, which has helped us earn the trust 
-            and loyalty of customers.
-          </p>
-         
-        
-          <Link href="/products">
-            <button className="px-6 py-3 bg-white text-blue-800 font-semibold rounded-full shadow-md hover:bg-gray-100 transition">
-              Shop All Products
-            </button>
-          </Link>
-           </div>
-        </div>
-        <div className="flex-1 text-center">
-          <Image
-            src="/images/product.png"
-            alt="Smart Device Image"
-            width={400}
-            height={400}
-            className="object-contain mx-auto"
-          />
-        </div>
-      </div>
+      
+<div className="bg-gradient-to-r from-[#E0F2FE] via-[#C7E0F4] to-[#A5C9E8] py-3 px-4 md:px-12">
+  <div className="max-w-5xl mx-auto text-center text-gray-800">
+    <h1 className="text-4xl md:text-5xl font-bold mb-2 leading-tight text-blue-900">
+      Driving Innovation in the <br />
+      <span className="text-blue-700">Chemical Industry</span>
+    </h1>
+
+    <div className="text-lg leading-relaxed max-w-4xl mx-auto">
+      <p>
+        Sargam Chemical Industries Pvt Ltd was founded in 2025 and is
+        headquartered in Duhabi Sunsari, in Nepal’s eastern region.
+        It is a leading manufacturer of soap and detergent, distributing
+        products across more than 77 districts.
+      </p>
+
+      {/* Show only on medium and up */}
+      <p className="hidden md:block mt-4">
+        We are committed to producing high-quality, eco-friendly products
+        that earn lasting customer trust. Our high-quality products and services
+        have made our brand well-known and beloved by all Nepalese households.
+        In a short amount of time, the company has attained an annual production of
+        60,000 metric tonnes. We are dedicated to producing high-quality products
+        with the highest levels of customer satisfaction, based on our fundamental principles,
+        and using raw materials supplied responsibly.
+      </p>
+    </div>
+
+    <Link href="/products">
+      <button className="mt-8 px-8 py-3 bg-blue-800 text-white font-semibold rounded-full shadow-lg hover:bg-blue-900 transition duration-300">
+        Shop All Products
+      </button>
+    </Link>
+  </div>
+</div>
+
 
       {/* Content with Padding */}
       <div className="px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 ">
         {/* Products Section */}
-        <h2 className="text-3xl font-bold text-blue-900 mt-16 mb-6">Products</h2>
+        <h2 className="text-3xl font-bold text-blue-900 mt-16 mb-6">
+          Products
+        </h2>
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 ">
           {products.map((product, index) => (
             <Link
@@ -154,12 +161,14 @@ export default function BodyContent() {
         </div>
 
         {/* Machinery Section */}
-        <h2 className="text-3xl font-bold text-blue-900 mt-16 mb-6">Machinery</h2>
+        <h2 className="text-3xl font-bold text-blue-900 mt-16 mb-6">
+          Machinery
+        </h2>
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {otherproducts.map((otherproduct, index) => (
             <div
               key={index}
-              className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg border border-transparent hover:border-blue-600 transition-all"
+              className="group bg-orange-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg border border-transparent hover:border-blue-600 transition-all"
             >
               <Link href={`/machinery/${otherproduct.slug}`}>
                 <Image
@@ -174,7 +183,9 @@ export default function BodyContent() {
                 <h5 className="mb-2 text-xl font-bold text-blue-900 uppercase">
                   {otherproduct.name}
                 </h5>
-                <p className="text-sm text-gray-700">{otherproduct.description}</p>
+                <p className="text-sm text-gray-700">
+                  {otherproduct.description}
+                </p>
               </div>
             </div>
           ))}

@@ -73,7 +73,9 @@ export default function FAQSection() {
           </div>
           <div className="bg-white rounded-xl shadow p-6">
             <p className="font-semibold mb-2">Call Us</p>
-            <p className="text-sm text-gray-600">942185602</p>
+            <p className="text-sm text-gray-600">9842185602</p>
+            <p className="text-sm text-gray-600">9852054741</p>
+
           </div>
           <div className="bg-white rounded-xl shadow p-6">
             <p className="font-semibold mb-2">Email Us</p>

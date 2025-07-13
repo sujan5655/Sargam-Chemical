@@ -52,13 +52,7 @@ const products = [
     description:
       "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
   },
-  {
-    name: "Detergent",
-    slug: "dishwash",
-    image: "/images/detergent5.jpg",
-    description:
-      "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
-  },
+  
 ];
 
 interface PageProps {

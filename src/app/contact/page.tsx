@@ -36,9 +36,9 @@ export default function Contact() {
         Get in Touch
       </h2>
 
-      <div className="grid gap-10 lg:grid-cols-2 items-start">
-        {/* Left - Form */}
-        <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-10 border border-blue-100">
+      {/* Center the form container */}
+      <div className="flex justify-center">
+        <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-10 border border-blue-100 w-full max-w-3xl">
           <h3 className="text-2xl font-bold mb-3 text-blue-800">
             Send us a Message
           </h3>
@@ -46,7 +46,7 @@ export default function Contact() {
             We’d love to hear from you. Please fill out the form below.
           </p>
 
-          <form ref={form} onSubmit={sendEmail} className="space-y-5">
+          <form ref={form} onSubmit={sendEmail} className="space-y-5 text-left">
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex-1">
                 <label className="text-sm font-medium text-gray-700">
@@ -106,17 +106,6 @@ export default function Contact() {
               ✉️ Send Message
             </button>
           </form>
-        </div>
-
-        {/* Right - Map */}
-        <div className="overflow-hidden rounded-3xl shadow-2xl border border-blue-100 h-full">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3531.938778220182!2d87.2731922149812!3d26.45313498331602!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef755afbf71dcf%3A0xf78e1f577416132a!2sISMT%20College%20Biratnagar!5e0!3m2!1sen!2snp!4v1719401761481!5m2!1sen!2snp"
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-[450px] border-0 rounded-2xl"
-          ></iframe>
         </div>
       </div>
     </section>

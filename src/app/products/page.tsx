@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Products() {
   const allProducts = [
-     {
+    {
       name: "Detergent Powder",
       category: "Detergent Powder",
       image: "/images/detergent3.jpg",
@@ -53,7 +53,7 @@ export default function Products() {
       image: "/images/laundrysoap2.jpg",
       description: "Powerful cleaning with fresh fragrance.",
     },
-     {
+    {
       name: "Laundry Product",
       category: "Laundry Soap",
       image: "/images/laundrysoap6.jpg",
@@ -83,7 +83,7 @@ export default function Products() {
       image: "/images/detergent1.jpg",
       description: "Gentle on skin with long-lasting fragrance.",
     },
-     {
+    {
       name: "Laundry Product",
       category: "Laundry Soap",
       image: "/images/laundrysoap7.jpg",
@@ -107,19 +107,20 @@ export default function Products() {
       image: "/images/detergent5.jpg",
       description: "Removes tough grease and stains, leaves utensils shining.",
     },
-
-        {
-      name: "Multipurpose Cleaner",
+    {
+      name: "Machinery",
       category: "Machinery",
       image: "/images/otherproduct/machine2.jpg",
       description: "Effective cleaner for multiple household uses.",
-    },    {
-      name: "Multipurpose Cleaner",
+    },
+    {
+      name: "Machinery",
       category: "Machinery",
       image: "/images/otherproduct/machine3.jpg",
       description: "Effective cleaner for multiple household uses.",
-    },    {
-      name: "Multipurpose Cleaner",
+    },
+    {
+      name: "Machinery",
       category: "Machinery",
       image: "/images/otherproduct/machine4.jpg",
       description: "Effective cleaner for multiple household uses.",
@@ -136,6 +137,7 @@ export default function Products() {
     "Cloth Soap",
     "Machinery",
   ];
+
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 6;
@@ -156,6 +158,7 @@ export default function Products() {
 
   return (
     <section className="flex max-w-7xl mx-auto mt-[100px] p-4 md:space-x-6">
+      {/* Sidebar */}
       <aside className="w-56 bg-white border rounded-xl shadow-sm p-4 hidden md:block">
         <h3 className="text-lg font-semibold text-blue-800 mb-4">Categories</h3>
         <ul className="space-y-2">
@@ -179,12 +182,13 @@ export default function Products() {
         </ul>
       </aside>
 
-      {/* Main content */}
+      {/* Main Content */}
       <div className="flex-1">
         <h2 className="text-2xl font-bold text-blue-900 mb-6">
           Explore Our Products
         </h2>
 
+        {/* Product Grid */}
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {currentProducts.map((product, index) => (
             <div
@@ -196,7 +200,7 @@ export default function Products() {
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-contain p-4 transition-transform duration-300 hover:scale-105"
+                  className="object-cover transition-transform duration-300 hover:scale-105"
                 />
               </div>
               <div className="p-4 flex flex-col flex-1">
