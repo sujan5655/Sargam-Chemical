@@ -11,6 +11,13 @@ const products = [
       "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
   },
   {
+      name: "washing machine powder",
+      slug: "washing",
+      image: "/images/washingpowder.jpg",
+      description:
+        "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
+    },
+  {
     name: "Laundry Soap",
     slug: "laundry-soap",
     image: "/images/laundrysoap2.jpg",
@@ -51,7 +58,8 @@ const products = [
     image: "/images/dishwash.jpg",
     description:
       "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
-  },
+  }
+  
   
 ];
 

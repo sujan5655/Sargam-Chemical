@@ -2,13 +2,27 @@
 
 import Image from "next/image";
 import Link from "next/link";
-
+import React from "react";
 export default function BodyContent() {
   const products = [
     {
       name: "Detergent",
       slug: "detergent",
       image: "/images/detergent3.jpg",
+      description:
+        "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
+    },
+    {
+      name: "washing machine powder",
+      slug: "washing",
+      image: "/images/washingpowder.jpg",
+      description:
+        "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
+    },
+    {
+      name: "Detergent",
+      slug: "detergent",
+      image: "/images/detergent6.jpg",
       description:
         "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
     },
@@ -21,7 +35,7 @@ export default function BodyContent() {
     },
 
     {
-      name: "Industrial Cleaning Agents",
+      name: "Washing Machine Powder",
       slug: "industrial-cleaning-agents",
       image: "/images/detergent1.jpg",
       description:
@@ -62,64 +76,69 @@ export default function BodyContent() {
       name: "Machine1",
       slug: "machine1",
       image: "/images/otherproduct/machine1.jpg",
-      description:
-        "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
+      description: " make the work easy and available at best price",
     },
     {
       name: "Machine2",
       slug: "machine2",
       image: "/images/otherproduct/machine2.jpg",
-      description:
-        "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
+      description: "make the work easy and available at best price",
     },
     {
       name: "Machine3",
       slug: "machine3",
       image: "/images/otherproduct/machine3.jpg",
-      description:
-        "Innovative solutions for fabric treatment, dyeing, and finishing processes.",
+      description: " make the work easy and available at best price",
     },
   ];
 
   return (
     <section className="w-full">
       {/* Hero Section (Full WiEFdth) */}
-      
-<div className="bg-gradient-to-r from-[#E0F2FE] via-[#C7E0F4] to-[#A5C9E8] py-3 px-4 md:px-12">
-  <div className="max-w-5xl mx-auto text-center text-gray-800">
-    <h1 className="text-4xl md:text-5xl font-bold mb-2 leading-tight text-blue-900">
-      Driving Innovation in the <br />
-      <span className="text-blue-700">Chemical Industry</span>
-    </h1>
 
-    <div className="text-lg leading-relaxed max-w-4xl mx-auto">
-      <p>
-        Sargam Chemical Industries Pvt Ltd was founded in 2025 and is
-        headquartered in Duhabi Sunsari, in Nepal’s eastern region.
-        It is a leading manufacturer of soap and detergent, distributing
-        products across more than 77 districts.
-      </p>
+      <div className="bg-gradient-to-r from-[#E0F2FE] via-[#C7E0F4] to-[#A5C9E8] py-3 px-4 md:px-12">
+        <div className="max-w-5xl mx-auto text-center text-gray-800">
+          <h1 className="text-4xl md:text-5xl font-bold mb-2 leading-tight text-blue-900">
+            Driving Innovation in the <br />
+            <span className="text-blue-700">Chemical Industry</span>
+          </h1>
 
-      {/* Show only on medium and up */}
-      <p className="hidden md:block mt-4">
-        We are committed to producing high-quality, eco-friendly products
-        that earn lasting customer trust. Our high-quality products and services
-        have made our brand well-known and beloved by all Nepalese households.
-        In a short amount of time, the company has attained an annual production of
-        60,000 metric tonnes. We are dedicated to producing high-quality products
-        with the highest levels of customer satisfaction, based on our fundamental principles,
-        and using raw materials supplied responsibly.
-      </p>
-    </div>
+          <div className="text-lg leading-relaxed max-w-4xl mx-auto">
+            <p>
+              Sargam Chemical Industries Pvt Ltd was founded in 2025 and is
+              headquartered in Duhabi Sunsari, in Nepal’s eastern region. It is
+              a leading manufacturer of soap and detergent, distributing
+              products across more than 77 districts.
+            </p>
 
-    <Link href="/products">
-      <button className="mt-8 px-8 py-3 bg-blue-800 text-white font-semibold rounded-full shadow-lg hover:bg-blue-900 transition duration-300">
-        Shop All Products
-      </button>
-    </Link>
-  </div>
-</div>
+            {/* Show only on medium and up */}
+            <p className="hidden md:block mt-4">
+              We are committed to producing high-quality, eco-friendly products
+              that earn lasting customer trust. Our high-quality products and
+              services have made our brand well-known and beloved by all
+              Nepalese households. In a short amount of time, the company has
+              attained an annual production at large quantity. We are dedicated
+              to producing high-quality products with the highest levels of
+              customer satisfaction, based on our fundamental principles, and
+              using raw materials supplied responsibly.
+            </p>
+             {
+        React.createElement("marquee", { behavior: "scroll", direction: "left", scrollAmount: 5 },
+          <span style={{ color: 'green', fontSize: '20px', fontWeight: 'bold' }}>
+            All kinds of raw materials and machine equipment available.....
+          </span>
+        )
+      }
 
+          </div>
+
+          <Link href="/products">
+            <button className="mt-8 px-8 py-3 bg-blue-800 text-white font-semibold rounded-full shadow-lg hover:bg-blue-900 transition duration-300">
+              See All Products
+            </button>
+          </Link>
+        </div>
+      </div>
 
       {/* Content with Padding */}
       <div className="px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 ">

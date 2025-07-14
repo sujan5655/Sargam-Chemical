@@ -11,17 +11,36 @@ export default function Products() {
       description: "Removes tough grease and stains, leaves utensils shining.",
     },
     {
-      name: "Laundry Product",
-      category: "Laundry Soap",
+      name: "Cloth Soap",
+      category: "Cloth Soap",
       image: "/images/laundrysoap5.jpg",
       description: "Brightens and refreshes clothes effectively.",
     },
     {
       name: "Utensil Soap",
-      category: "Utensil Soap",
-      image: "/images/detergent.jpg",
+      category: "Detergent Powder",
+      image: "/images/detergent1.jpg",
       description: "Removes tough grease and stains, leaves utensils shining.",
     },
+    {
+      name: "Detergent Powder",
+      category: "Detergent Powder",
+      image: "/images/detergent6.jpg",
+      description: "Removes tough grease and stains, leaves utensils shining.",
+    },
+     {
+      name: "Detergent Powder",
+      category: "Detergent Powder",
+      image: "/images/detergent7.jpg",
+      description: "Removes tough grease and stains, leaves utensils shining.",
+    },
+    {
+    name: "Dishwash",
+    category: "Utensil Soap",
+    image: "/images/utensilsoap.jpg",
+    description:
+      "Innovative solutions for the utensils and makes the utensils clean 100% guarantee.",
+  },
     {
       name: "Utensil Soap",
       category: "Utensil Soap",
@@ -29,8 +48,8 @@ export default function Products() {
       description: "Removes tough grease and stains, leaves utensils shining.",
     },
     {
-      name: "Laundry Soap",
-      category: "Laundry Soap",
+      name: "Cloth Soap",
+      category: "Cloth Soap",
       image: "/images/laundrysoap1.jpg",
       description:
         "Removes tough grease and stains, keeps fabric fresh and soft.",
@@ -42,32 +61,32 @@ export default function Products() {
       description: "Effective solutions for clean, healthy living spaces.",
     },
     {
-      name: "Laundry Product",
-      category: "Laundry Soap",
+      name: "Cloth Soap",
+      category: "Cloth Soap",
       image: "/images/laundrysoap1.jpg",
       description: "Strong on stains, gentle on fabric.",
     },
     {
-      name: "Laundry Product",
-      category: "Laundry Soap",
+      name: "Cloth Soap",
+      category: "Cloth Soap",
       image: "/images/laundrysoap2.jpg",
       description: "Powerful cleaning with fresh fragrance.",
     },
     {
-      name: "Laundry Product",
-      category: "Laundry Soap",
+      name: "Cloth Soap",
+      category: "Cloth Soap",
       image: "/images/laundrysoap6.jpg",
       description: "Brightens and refreshes clothes effectively.",
     },
     {
-      name: "Laundry Product",
-      category: "Laundry Soap",
+      name: "Cloth Soap",
+      category: "Cloth Soap",
       image: "/images/laundrysoap3.jpg",
       description: "Long-lasting freshness and softness.",
     },
     {
-      name: "Laundry Product",
-      category: "Laundry Soap",
+      name: "Cloth Soap",
+      category: "Cloth Soap",
       image: "/images/laundrysoap4.jpg",
       description: "Brightens and refreshes clothes effectively.",
     },
@@ -80,21 +99,22 @@ export default function Products() {
     {
       name: "Toilet Soap",
       category: "Toilet Soap",
-      image: "/images/detergent1.jpg",
+      image: "/images/toiletsoap.jpg",
       description: "Gentle on skin with long-lasting fragrance.",
-    },
-    {
-      name: "Laundry Product",
-      category: "Laundry Soap",
-      image: "/images/laundrysoap7.jpg",
-      description: "Brightens and refreshes clothes effectively.",
     },
     {
       name: "Cloth Soap",
       category: "Cloth Soap",
-      image: "/images/toiletsoap.jpg",
-      description: "Strong on stains, gentle on fabrics.",
+      image: "/images/laundrysoap7.jpg",
+      description: "Brightens and refreshes clothes effectively.",
     },
+    {
+      name: "Laundry Product",
+      category: "Laundry Detergent",
+      image: "/images/washingpowder.jpg",
+      description: "Brightens and refreshes clothes effectively.",
+    },
+   
     {
       name: "Multipurpose Cleaner",
       category: "Machinery",
@@ -125,6 +145,7 @@ export default function Products() {
       image: "/images/otherproduct/machine4.jpg",
       description: "Effective cleaner for multiple household uses.",
     },
+    
   ];
 
   const categories = [
@@ -132,9 +153,9 @@ export default function Products() {
     "Utensil Soap",
     "Detergent Powder",
     "Home Care",
-    "Laundry Soap",
-    "Toilet Soap",
     "Cloth Soap",
+    "Toilet Soap",
+    "Laundry Detergent",
     "Machinery",
   ];
 
