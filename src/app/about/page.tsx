@@ -7,9 +7,9 @@ import {
   Users,
   Globe,
   Star,
-  Link,
-} from "lucide-react";
 
+} from "lucide-react";
+import Link from "next/link";
 export default function About() {
   return (
     <section className="bg-gradient-to-br from-blue-50 via-white to-blue-100 py-20 px-6 md:px-12 lg:px-24">
@@ -22,8 +22,8 @@ export default function About() {
         <p className="mt-6 text-lg text-gray-700 leading-8">
           <strong>Sargam Chemical Industries Pvt. Ltd.</strong> was founded in
           <strong> 2025</strong> and is headquartered in
-          <strong> Duhabi, Sunsari</strong>, in Nepal's eastern region. Today,
-          the company is recognized as one of Nepal's leading manufacturers of
+          <strong> Duhabi, Sunsari</strong>, in Nepal&apos;s eastern region Today,
+          the company is recognized as one of Nepal&apos;s leading manufacturers of
           soaps and detergents, with products distributed across all
           <strong> 77 districts</strong> of the country.
         </p>
@@ -94,7 +94,7 @@ export default function About() {
           </h3>
 
           <p className="text-gray-700 leading-8">
-            To become Nepal's most trusted chemical manufacturing company by
+           To become Nepal&apos;s most trusted chemical manufacturing company by
             continuously innovating and providing sustainable cleaning
             solutions for homes and industries.
           </p>
