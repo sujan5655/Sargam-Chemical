@@ -97,6 +97,12 @@ export default function Products() {
       description: "Removes tough grease and stains, leaves utensils shining.",
     },
     {
+      name: "Faru Powerwash",
+      category: "Detergent Powder",
+      image: "/images/detergent8.jpeg",
+      description: "Removes tough grease and stains, leaves utensils shining.",
+    },
+    {
       name: "Toilet Soap",
       category: "Toilet Soap",
       image: "/images/toiletsoap.jpg",
@@ -116,7 +122,7 @@ export default function Products() {
     },
    
     {
-      name: "Multipurpose Cleaner",
+      name: "Machine",
       category: "Machinery",
       image: "/images/otherproduct/machine1.jpg",
       description: "Effective cleaner for multiple household uses.",

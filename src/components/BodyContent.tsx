@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import ProductOverlay from "./ProductOverlay";
 export default function BodyContent() {
   const products = [
     {
@@ -93,6 +94,8 @@ export default function BodyContent() {
   ];
 
   return (
+    <>
+    <ProductOverlay/>
     <section className="w-full">
       {/* Hero Section (Full WiEFdth) */}
 
@@ -211,5 +214,6 @@ export default function BodyContent() {
         </div>
       </div>
     </section>
+    </>
   );
 }
