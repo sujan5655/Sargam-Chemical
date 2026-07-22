@@ -27,18 +27,19 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-fast-marquee": "^1.6.5",
-    "react-spring": "^10.0.1"
+    "react-spring": "^10.0.1",
+    "swiper": "^14.0.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^17.0.87",
+    "@types/node": "20.19.43",
+    "@types/react": "17.0.93",
     "@types/react-dom": "^17.0.26",
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
     "tailwindcss": "^4",
-    "typescript": "^5",
+    "typescript": "5.9.3",
     "wrangler": "^4.23.0"
   }
 }

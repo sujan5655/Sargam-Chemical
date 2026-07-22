@@ -1,13 +1,39 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { X } from "lucide-react";
 
-export default function ProductOverlay() {
-  const [open, setOpen] = useState(true);
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 
-  const products = [
+import "swiper/css";
+
+export default function ProductSliderOverlay() {
+  const [show, setShow] = useState(false);
+
+  // Show overlay only once per browser session
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const hasSeenOverlay = sessionStorage.getItem("product-overlay-seen");
+
+    if (!hasSeenOverlay) {
+      setShow(true);
+      sessionStorage.setItem("product-overlay-seen", "true");
+    }
+  }, []);
+
+  // Disable background scrolling while overlay is open
+  useEffect(() => {
+    document.body.style.overflow = show ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [show]);
+
+  const allProducts = [
     {
       name: "Detergent Powder",
       image: "/images/detergent3.jpg",
@@ -21,7 +47,19 @@ export default function ProductOverlay() {
       image: "/images/detergent1.jpg",
     },
     {
+      name: "Detergent Powder",
+      image: "/images/detergent6.jpg",
+    },
+    {
+      name: "Detergent Powder",
+      image: "/images/detergent7.jpg",
+    },
+    {
       name: "Dishwash",
+      image: "/images/utensilsoap.jpg",
+    },
+    {
+      name: "Utensil Soap",
       image: "/images/dishwash.jpg",
     },
     {
@@ -29,63 +67,123 @@ export default function ProductOverlay() {
       image: "/images/homecare.jpg",
     },
     {
-      name: "Laundry Product",
-      image: "/images/washingpowder.jpg",
+      name: "Cloth Soap",
+      image: "/images/laundrysoap2.jpg",
+    },
+    {
+      name: "Cloth Soap",
+      image: "/images/laundrysoap6.jpg",
+    },
+    {
+      name: "Cloth Soap",
+      image: "/images/laundrysoap3.jpg",
+    },
+    {
+      name: "Cloth Soap",
+      image: "/images/laundrysoap4.jpg",
+    },
+    {
+      name: "Detergent Powder",
+      image: "/images/detergent4.jpg",
+    },
+    {
+      name: "Faru Powerwash",
+      image: "/images/detergent8.jpeg",
     },
     {
       name: "Toilet Soap",
       image: "/images/toiletsoap.jpg",
     },
     {
+      name: "Cloth Soap",
+      image: "/images/laundrysoap7.jpg",
+    },
+    {
+      name: "Laundry Product",
+      image: "/images/washingpowder.jpg",
+    },
+    {
       name: "Machine",
       image: "/images/otherproduct/machine1.jpg",
     },
+    {
+      name: "Detergent Powder",
+      image: "/images/detergent5.jpg",
+    },
+    {
+      name: "Machine",
+      image: "/images/otherproduct/machine2.jpg",
+    },
+    {
+      name: "Machine",
+      image: "/images/otherproduct/machine3.jpg",
+    },
+    {
+      name: "Machine",
+      image: "/images/otherproduct/machine4.jpg",
+    },
   ];
 
-  if (!open) return null;
+  if (!show) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] bg-black/60 flex items-center justify-center p-4">
-      <div className="bg-white w-full max-w-7xl rounded-xl shadow-2xl relative max-h-[90vh] overflow-y-auto">
-
+    <div
+      className="fixed inset-0 z-[9999] bg-black/30 backdrop-blur-[2px] flex items-center justify-center"
+      onClick={() => setShow(false)}
+    >
+      <div
+        className="relative w-full max-w-6xl mx-6 bg-white rounded-2xl shadow-2xl border border-gray-200 p-6"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Close Button */}
         <button
-          onClick={() => setOpen(false)}
-          className="absolute top-4 right-4 z-20 bg-red-500 hover:bg-red-600 text-white rounded-full p-2"
+          onClick={() => setShow(false)}
+          className="absolute top-4 right-4 z-20 bg-red-500 hover:bg-red-600 text-white rounded-full p-2 transition"
         >
-          <X size={22} />
+          <X size={18} />
         </button>
 
-        <div className="p-8">
-          <h2 className="text-3xl font-bold text-center text-blue-900 mb-8">
-            Our Products
-          </h2>
+        <h2 className="text-2xl font-bold text-center text-blue-900 mb-6">
+          Our Products
+        </h2>
 
-          <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {products.map((item, index) => (
-              <div
-                key={index}
-                className="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition"
-              >
-                <div className="relative h-56">
+        <Swiper
+          modules={[Autoplay]}
+          slidesPerView={"auto"}
+          spaceBetween={20}
+          loop={true}
+          allowTouchMove={false}
+          speed={700}
+          autoplay={{
+            delay: 500,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+        >
+          {allProducts.map((product, index) => (
+            <SwiperSlide
+              key={index}
+              style={{ width: "220px" }}
+            >
+              <div className="bg-white rounded-xl shadow-md border overflow-hidden hover:shadow-xl transition">
+                <div className="relative h-48">
                   <Image
-                    src={item.image}
-                    alt={item.name}
+                    src={product.image}
+                    alt={product.name}
                     fill
                     className="object-cover"
                   />
                 </div>
 
-                <div className="p-4">
-                  <h3 className="text-center font-bold text-blue-900 uppercase">
-                    {item.name}
+                <div className="p-3 text-center">
+                  <h3 className="font-semibold text-blue-900">
+                    {product.name}
                   </h3>
                 </div>
               </div>
-            ))}
-          </div>
-
-        </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );
