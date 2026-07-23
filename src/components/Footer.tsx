@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import logo from "/public/images/logo.png";
+import logo from "../../public/images/logo.png";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
