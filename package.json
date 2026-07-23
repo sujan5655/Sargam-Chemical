@@ -23,13 +23,9 @@
     "@opennextjs/cloudflare": "^1.4.0",
     "@react-spring/web": "^10.0.1",
     "lucide-react": "^0.525.0",
-<<<<<<< HEAD
-   "next": "^15.5.6",
 
-=======
-    "next": "15.3.8",
->>>>>>> 3eeb50be51a5f65f28f5336ff82c002fa7fbb2e6
-    "react": "^19.0.0",
+"next": "^15.5.6",
+"react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-fast-marquee": "^1.6.5",
     "react-spring": "^10.0.1"
