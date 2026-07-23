@@ -17,7 +17,7 @@ export default function Products() {
       description: "Brightens and refreshes clothes effectively.",
     },
     {
-      name: "Utensil Soap",
+      name: "Detergent Powder",
       category: "Detergent Powder",
       image: "/images/detergent1.jpg",
       description: "Removes tough grease and stains, leaves utensils shining.",
@@ -47,25 +47,14 @@ export default function Products() {
       image: "/images/dishwash.jpg",
       description: "Removes tough grease and stains, leaves utensils shining.",
     },
-    {
-      name: "Cloth Soap",
-      category: "Cloth Soap",
-      image: "/images/laundrysoap1.jpg",
-      description:
-        "Removes tough grease and stains, keeps fabric fresh and soft.",
-    },
+    
     {
       name: "Home care product",
       category: "Home Care",
       image: "/images/homecare.jpg",
       description: "Effective solutions for clean, healthy living spaces.",
     },
-    {
-      name: "Cloth Soap",
-      category: "Cloth Soap",
-      image: "/images/laundrysoap1.jpg",
-      description: "Strong on stains, gentle on fabric.",
-    },
+    
     {
       name: "Cloth Soap",
       category: "Cloth Soap",
@@ -97,6 +86,12 @@ export default function Products() {
       description: "Removes tough grease and stains, leaves utensils shining.",
     },
     {
+      name: "Faru Powerwash",
+      category: "Detergent Powder",
+      image: "/images/detergent8.jpeg",
+      description: "Removes tough grease and stains, leaves utensils shining.",
+    },
+    {
       name: "Toilet Soap",
       category: "Toilet Soap",
       image: "/images/toiletsoap.jpg",
@@ -116,7 +111,7 @@ export default function Products() {
     },
    
     {
-      name: "Multipurpose Cleaner",
+      name: "Machine",
       category: "Machinery",
       image: "/images/otherproduct/machine1.jpg",
       description: "Effective cleaner for multiple household uses.",
